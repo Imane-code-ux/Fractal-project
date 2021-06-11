@@ -14,16 +14,16 @@ int main(int argc ,char *argv[])
 
             double i = 0, j;
 
-            while(i !=50)
+            while(i !=500)
             {
                 j = 0;
-                while(j!=50)
+                while(j!=500)
                 {
-                	mandelbrot(i,j,renderer);                      
-                    }
-                    j++;
-            }
-                i++;          
+                	mandelbrot(i,j,renderer);    
+                  j++;
+                }
+                i++;
+            }       
          
             SDL_RenderPresent(renderer);
 
