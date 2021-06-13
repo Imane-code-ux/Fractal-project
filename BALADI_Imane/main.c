@@ -12,7 +12,7 @@ int main(int argc ,char *argv[])
         {
             SDL_bool done = SDL_FALSE;
 
-            double i = 0, j;
+            int i = 0, j;
 
             while(i !=500)
             {
