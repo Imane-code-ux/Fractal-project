@@ -3,7 +3,7 @@
 
 void light_pixel(int i, int j , SDL_Renderer *renderer)
 {
-    SDL_SetRenderDrawColor(renderer , 255, 0 , 255 , SDL_ALPHA_OPAQUE);
+    SDL_SetRenderDrawColor(renderer , 0, 0 , 0 , SDL_ALPHA_OPAQUE);
     SDL_RenderDrawPoint(renderer , i , j);
 }
 
@@ -32,6 +32,11 @@ void mandelbrot(int x,int y,SDL_Renderer *renderer)
 	{
 		light_pixel( x, y ,renderer);			
 	}	
+	else
+	{
+		SDL_SetRenderDrawColor(renderer , 0, 0 ,i*255/iteration_max, SDL_ALPHA_OPAQUE);
+    		SDL_RenderDrawPoint(renderer , x, y);
+	}	
 		
 		
 	
@@ -59,7 +64,13 @@ void burning_ship(int x,int y,SDL_Renderer *renderer)
 				
 	{
 		light_pixel( x, y ,renderer);			
-	}		
+	}
+	else
+	{
+		SDL_SetRenderDrawColor(renderer , 0, 0 ,i*255/iteration_max, SDL_ALPHA_OPAQUE);
+    		SDL_RenderDrawPoint(renderer , x, y);
+	}	
+	
 }
 
 
@@ -85,7 +96,12 @@ void julia_set(int x,int y,SDL_Renderer *renderer)
 	{
 		light_pixel( x, y ,renderer);			
 	}		
-
+	else
+	{
+		SDL_SetRenderDrawColor(renderer , 0, 0 ,i*255/iteration_max, SDL_ALPHA_OPAQUE);
+    		SDL_RenderDrawPoint(renderer , x, y);
+	}	
+	
 }
 
 
