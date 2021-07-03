@@ -33,9 +33,9 @@ void burning_ship(int x,int y,SDL_Renderer *renderer)
 		
 }
 
-void mandelbrot(int x,int y,SDL_Renderer *renderer)
+void mandelbrot(int x,int y,SDL_Renderer *renderer,int zoom)
 {
-	int zoom = 100;// pour une distance de 1 sur le plan, on a 100 pixel sur l'image
+	// pour une distance de 1 sur le plan, on a 100 pixel sur l'image
 
 
 	// on calcule la taille de l'image :
