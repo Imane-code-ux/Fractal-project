@@ -15,7 +15,7 @@
 
 void light_pixel(int, int , SDL_Renderer *);
 void burning_ship(int,int ,SDL_Renderer *);
-void mandelbrot(int x,int y,SDL_Renderer *renderer);
+void mandelbrot(int x,int y,SDL_Renderer *renderer,int zoom);
 void julia_set(int x,int y,SDL_Renderer *renderer);
 
 
