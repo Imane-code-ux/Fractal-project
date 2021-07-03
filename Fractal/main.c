@@ -26,25 +26,75 @@ int main(int argc ,char *argv[])
                 		j = 0;
                 		while(j!=500)
                 		{
-                			mandelbrot(i,j,renderer);    
+                			mandelbrot(i,j,renderer,100);    
                   			j++;
                			}
                 		i++;
             		}       
          
             		SDL_RenderPresent(renderer);
+			while (running) {
+				SDL_Event event;
 
-            		while(!done)
-            		{
-                		SDL_Event event;
-                		while (SDL_PollEvent(&event))
-                		{
-                    			if (event.type == SDL_QUIT)
-                    			{	
-                        			done = SDL_TRUE;
-                    			}
-                		}
-            		}
+				while (SDL_PollEvent(&event)) {
+					switch (event.type) {
+					case SDL_QUIT:
+						running = SDL_FALSE;
+						break;
+					/*case SDL_MOUSEMOTION:
+						fprintf(stdout, "[%d ms] MouseMotion\ttype:%d\twhich:\tx:%d\ty:%d\txrel:%d\tyrel:%d\n",
+					event.motion.timestamp, event.motion.type, event.motion.which, event.motion.x, event.motion.y, event.motion.xrel, event.motion.yrel);
+
+						SDL_SetRenderDrawColor(renderer,0,0,0,SDL_ALPHA_OPAQUE);
+						SDL_RenderClear(renderer);
+						SDL_RenderPresent(renderer);
+						
+						int i = 0, j;
+						
+						while(i !=500)
+            					{
+                					j = 0;
+                					while(j!=500)
+                					{
+                						mandelbrot(i,j,renderer,200);    
+                  						j++;
+               						}
+                					i++;
+            					}       
+						SDL_RenderPresent(renderer);
+						break;*/
+					}
+					switch(event.key.keysym.sym)
+					{
+
+						case SDLK_w:
+					/*	fprintf(stdout, "[%d ms] MouseButton\ttype:%d\tid:%d\tx:%d\ty:%d\tbutton:%d\tstate:%d\n",
+					event.button.timestamp, event.button.type, event.button.which, event.button.x, event.button.y, event.button.button, event.button.state);*/
+							SDL_SetRenderDrawColor(renderer,0,0,0,SDL_ALPHA_OPAQUE);
+							SDL_RenderClear(renderer);
+							SDL_RenderPresent(renderer);
+							int i = 0, j;
+					
+            						while(i !=500)
+            						{
+                						j = 0;
+
+                						while(j!=500)
+                						{
+								
+                							mandelbrot(i,j,renderer,200);
+								 
+                  							j++;
+               							}
+                						i++;
+            						}       
+							SDL_RenderPresent(renderer);
+							break;
+					}
+				}
+			}
+
+            		
         	}
         	if(renderer){
             		SDL_DestroyRenderer(renderer);
